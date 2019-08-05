@@ -28,7 +28,9 @@ pipeline {
       }
     }
     stage ('Despliegue Produccion') {
-      echo 'Despliegue Produccion'
+      steps {
+        echo 'Despliegue Produccion'
+      }
     }
   }
 }
