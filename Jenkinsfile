@@ -4,6 +4,9 @@ pipeline {
     stage ('Inicializacion') {
       steps {
         echo 'Inicializando pipeline'
+        sh 'pip -V'
+        sh 'pip install coverage'
+        sh 'coverage --version'
       }
     }
     stage ('Pruebas Unitarias') {
