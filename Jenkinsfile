@@ -1,4 +1,4 @@
-Pipeline {
+pipeline {
   stages {
     stage ('Inicializacion') {
       steps {
@@ -19,6 +19,14 @@ Pipeline {
       steps {
         echo 'Publicando imagen'
       }
+    }
+    stage ('Aprobacion') {
+      timeout(time:5, unit:'DAYS'){
+        input message: 'Aprobar Despliegue Canary?', submitter: 'DevOps'
+      }
+    }
+    stage ('Despliegue Produccion') {
+      echo 'Despliegue Produccion'
     }
   }
 }
