@@ -4,7 +4,6 @@ pipeline {
     stage ('Inicializacion') {
       steps {
         echo 'Inicializando pipeline'
-        sh 'apt-get -y install python pip'
         sh 'pip -V'
         sh 'pip install coverage'
         sh 'coverage --version'
