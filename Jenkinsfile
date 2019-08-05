@@ -21,8 +21,10 @@ pipeline {
       }
     }
     stage ('Aprobacion') {
-      timeout(time:5, unit:'DAYS'){
-        input message: 'Aprobar Despliegue Canary?', submitter: 'DevOps'
+      steps {
+        timeout(time:5, unit:'DAYS'){
+          input message: 'Aprobar Despliegue Canary?', submitter: 'DevOps'
+        }
       }
     }
     stage ('Despliegue Produccion') {
