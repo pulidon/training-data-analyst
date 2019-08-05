@@ -6,7 +6,8 @@ pipeline {
         echo 'Inicializando pipeline'
         sh 'pip -V'
         sh 'pip install coverage'
-        sh 'coverage --version'
+        sh 'pip list'
+        sh 'python coverage --version'
       }
     }
     stage ('Pruebas Unitarias') {
