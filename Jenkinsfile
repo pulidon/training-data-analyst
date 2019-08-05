@@ -7,7 +7,7 @@ pipeline {
         sh 'pip -V'
         sh 'pip install coverage'
         sh 'pip list'
-        sh 'python coverage --version'
+        sh 'coverage --version'
       }
     }
     stage ('Pruebas Unitarias') {
